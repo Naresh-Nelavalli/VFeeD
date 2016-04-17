@@ -4,44 +4,111 @@
 }
 
 <h2>@ViewBag.Title.</h2>
+<html>
+<body style="background:url('../Images1/cover3.jpg');background-size:cover!important ">
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Hometown, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Hometown, new { @class = "form-control" })
-        </div>
-    </div>    
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
-        </div>
-    </div>
-}
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    @section scripts{
+        <script type="text/javascript">
+            $("#Isdonor").click(function () {
+                if ($("#Isdonor").is(':checked')) {
+                    $('#StoreName').show();
+                    $('#StoreZipcode').show();
+                    $('input[name="Sname"]').prop('required', true);
+                    $('input[name="Szip"]').prop('required', true);
+                    $('input[name="Szip"]').val("");
+                } else {
+                    $('#StoreName').hide();
+                    $('#StoreZipcode').hide();
+                    $('input[name="Sname"]').prop('required', false);
+                    $('input[name="Szip"]').prop('required', false);
+                    $('input[name="Szip"').val(0);
+                    $('input[name="Sname"]').val("");
+                }
+            });
+        </script>}
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+
+
+    <div class"empty-space" style="margin-top:150px"></div>
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        <div class="col-lg-8 col-md-offset-6">
+            @Html.AntiForgeryToken()
+            <h4>Create a new account.</h4>
+            <hr />
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+
+            <div class="form-group">
+                <div class="col-md-10">
+
+                    @Html.TextBoxFor(m => m.Fname, new { placeholder = Html.DisplayNameFor(n => n.Fname), @class = "form-control" })
+
+                </div>
+            </div>
+
+            <div class="form-group">
+
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Lname, new { placeholder = Html.DisplayNameFor(n => n.Lname), @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group">
+
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Email, new { placeholder = Html.DisplayNameFor(n => n.Email), @class = "form-control" })
+                </div>
+            </div>
+
+
+            <div class="form-group">
+
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Zipcode, new { placeholder = Html.DisplayNameFor(n => n.Zipcode), @class = "form-control", @type = "number", @min = "0" })
+                </div>
+            </div>
+
+            <div class="form-group">
+
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.Password, new { placeholder = Html.DisplayNameFor(n => n.Password), @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group">
+
+                <div class="col-md-10">
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { placeholder = Html.DisplayNameFor(n => n.ConfirmPassword), @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10" id="box1">
+                    @Html.CheckBoxFor(m => m.Isdonor)
+                    @Html.LabelFor(m => m.Isdonor)
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10" id="StoreName" hidden>
+                    @Html.TextBoxFor(m => m.Sname, new { placeholder = Html.DisplayNameFor(n => n.Sname), @class = "form-control" })
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-10" id="StoreZipcode" hidden>
+                    @Html.TextBoxFor(m => m.Szip, new { placeholder = Html.DisplayNameFor(n => n.Szip), @class = "form-control", @Value = 0 })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-1 col-md-10">
+                    <input type="submit" class="btn btn-default" value="Register" />
+                </div>
+            </div>
+        </div>
+    }
+</body>
+</html>

@@ -8,5 +8,6 @@ namespace VFeeD.Models
     public class GetViewModel
     {
         public string Hometown { get; set; }
+        public string Fname { get; set; }
     }
 }

@@ -80,6 +80,8 @@ namespace VFeeD.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
+            Console.Out.WriteLine(model.Password);
+            Console.Out.WriteLine(model.Password);
             if (!ModelState.IsValid)
             {
                 return View(model);
@@ -92,6 +94,7 @@ namespace VFeeD.Controllers
             {
                 case SignInStatus.Success:
                     return RedirectToLocal(returnUrl);
+                    //return RedirectToAction("Details", "Edible");
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -163,7 +166,7 @@ namespace VFeeD.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Hometown = model.Hometown };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Fname=model.Fname,Lname=model.Lname,Zipcode=model.Zipcode,Isdonor=model.Isdonor,Sname = model.Sname,Szip=model.Szip};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -379,7 +382,7 @@ namespace VFeeD.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Hometown = model.Hometown };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

@@ -17,23 +17,27 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("VFeeD", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("VFeeD", "Home1", "Home1", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Home", "Home1", "Home1", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("Stores", "Store", "Store", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("API", "Index", "Help", new { area = "HelpPage" }, null)</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
+    
     <div class="container body-content">
         @RenderBody()
         @RenderSection("SPAViews", required: false)
-        <hr />
+        <hr style="color:red;display:block;height:2px;border-top:2px solid"/>
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - VFeeD
+            <p>Designed and Developed with all love by <b>Naresh Nelavalli, Hema Chandra Reddy and  Srinivas</b> </p><i> </i> 
+            
         </footer>
     </div>
 

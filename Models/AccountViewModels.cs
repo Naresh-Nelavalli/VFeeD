@@ -69,10 +69,37 @@ namespace VFeeD.Models
 
     public class RegisterViewModel
     {
+        
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 2)]
+        [Display(Name = "FirstName")]
+        public string Fname { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 1)]
+        [Display(Name = "LastName")]
+        public string Lname { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
+
+        [Required]
+        [Display(Name = "Zipcode")]
+        public int Zipcode { get; set; }
+
+        [Display(Name = "Isdonor")]
+        public bool Isdonor { get; set; }
+
+       
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 1)]
+        [Display(Name = "StoreName")]
+        public string Sname { get; set; }
+
+        
+        [Display(Name = "StoreZip")]
+        public int Szip { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
@@ -85,8 +112,7 @@ namespace VFeeD.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
-        [Display(Name = "Hometown")]
-        public string Hometown { get; set; }
+       
     }
 
     public class ResetPasswordViewModel
