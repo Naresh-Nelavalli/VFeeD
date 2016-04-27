@@ -5,7 +5,7 @@
 
 <h2>@ViewBag.Title.</h2>
 <html>
-<body style="background:url('../Images1/cover3.jpg');background-size:cover!important ">
+<body style="background:url('../Images1/login.jpg');background-size:cover!important ">
 
     <script src="~/Scripts/jquery-1.10.2.js"></script>
     @section scripts{
@@ -30,10 +30,10 @@
 
 
 
-    <div class"empty-space" style="margin-top:150px"></div>
+    <div class"empty-space" style="margin-top:50px"></div>
     @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
     {
-        <div class="col-lg-8 col-md-offset-6">
+        <div class="col-lg-8 col-md-offset-2">
             @Html.AntiForgeryToken()
             <h4>Create a new account.</h4>
             <hr />
@@ -104,10 +104,12 @@
             </div>
 
             <div class="form-group">
-                <div class="col-md-offset-1 col-md-10">
-                    <input type="submit" class="btn btn-default" value="Register" />
+                <div class="col-md-offset-1 col-lg-10">
+                    <input type="submit" class="btn btn-default" value="Sign Up" style="width:160px;                     color:#f5861f; border: 1px solid rgba(245, 134, 31, .5); box-shadow: 0 2px 3px rgba                    (204, 204, 204, .32)" />
                 </div>
             </div>
+
+
         </div>
     }
 </body>

@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using VFeeD.Models;
+using DataLayerr;
 
 namespace VFeeD.Controllers
 {
@@ -93,8 +94,8 @@ namespace VFeeD.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
-                    //return RedirectToAction("Details", "Edible");
+                    //return RedirectToLocal(returnUrl);
+                    return RedirectToAction("Store", "Store");
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -166,6 +167,7 @@ namespace VFeeD.Controllers
         {
             if (ModelState.IsValid)
             {
+                UserDetails  user1 = new UserDetails { Username = model.Fname + " " + model.Lname, Email = model.Email, Fname = model.Fname, Lname = model.Lname, Zipcode = model.Zipcode, Isdonor = model.Isdonor, Sname = model.Sname, Szip = model.Szip };
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Fname=model.Fname,Lname=model.Lname,Zipcode=model.Zipcode,Isdonor=model.Isdonor,Sname = model.Sname,Szip=model.Szip};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
@@ -177,7 +179,8 @@ namespace VFeeD.Controllers
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-
+                    UserDataLayer ur = new UserDataLayer();
+                    ur.AddUser(user1);
                     return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);

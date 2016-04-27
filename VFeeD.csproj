@@ -242,6 +242,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ApplicationBaseController.cs" />
     <Compile Include="Controllers\Home1Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -252,6 +253,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604122040242_InitialCreate.cs" />
+    <Compile Include="Migrations\201604122040242_InitialCreate.Designer.cs">
+      <DependentUpon>201604122040242_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604262139520_InitialCreate1.cs" />
+    <Compile Include="Migrations\201604262139520_InitialCreate1.Designer.cs">
+      <DependentUpon>201604262139520_InitialCreate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -273,14 +283,21 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images1\cmgsoon.png" />
     <Content Include="Images1\cover1.jpg" />
     <Content Include="Images1\cover2.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images1\cover3.jpg" />
+    <Content Include="Images1\Dunkin Logo.jpg" />
     <Content Include="Images1\foodsaved.png" />
+    <Content Include="Images1\home111.png" />
+    <Content Include="Images1\home112.jpg" />
+    <Content Include="Images1\home113.png" />
+    <Content Include="Images1\home114.jpg" />
     <Content Include="Images1\login.jpg" />
+    <Content Include="Images1\Subway Logo.jpg" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -338,7 +355,7 @@
     <Content Include="Views\Home1\main.css" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\ExternalLoginConfirmation.cshtml" />
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
@@ -378,9 +395,11 @@
     <Content Include="Views\Home1\Home1 - Copy.cshtml" />
     <Content Include="Views\Zips\Index.cshtml" />
     <Content Include="Views\Store\Store.cshtml" />
+    <Content Include="Views\Store\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ApplicationBase\" />
     <Folder Include="Views\Home1\js\" />
   </ItemGroup>
   <ItemGroup>
@@ -392,10 +411,18 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataLayerr\DataLayerr.csproj">
+    <ProjectReference Include="..\DataLayerr\DataLayer.csproj">
       <Project>{c1f87d3e-327b-429a-ba70-2c9903a752a8}</Project>
-      <Name>DataLayerr</Name>
+      <Name>DataLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201604122040242_InitialCreate.resx">
+      <DependentUpon>201604122040242_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604262139520_InitialCreate1.resx">
+      <DependentUpon>201604262139520_InitialCreate1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,41 +1,62 @@
 ﻿@model IEnumerable<DataLayerr.Edible>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <div class"empty-space" style="margin-top:40px"></div>
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Zipcode)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FoodAvailability)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Zipcode)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FoodAvailability)
-        </td>
-       
-    </tr>
-}
+<style>
+    ul.storelist li {
+        list-style: none;
+        padding-top: 10px;
+        border-bottom: 1px solid #ccc;
+        margin-bottom: 10px;
+        background: #eee;
+    }
 
-</table>
+        ul.storelist li:hover {
+            background: rgba(136, 136, 136, 0.59);
+            color: #eee;
+        }
+
+        .donate {
+        background-color:#272727;
+        border-color:#272727;
+        font-size:15px;
+        text-transform:uppercase;
+        font-weight:600;
+        padding:21px 34px;
+        color:#fff;
+    
+    }
+</style>
+
+<ul class="storelist">
+
+    @foreach (var item in Model)
+    {
+        <li class="row">
+            <div class="col-sm-1"><img src="~/Images1/cmgsoon.png" width="80px" /></div>
+            <div class="col-sm-4">
+                <p>@Html.DisplayFor(modelItem => item.Name)</p>
+                <p>@Html.DisplayFor(modelItem => item.Zipcode)</p>
+            </div>
+            <div class="col-sm-4">
+                <p>Closing Time</p>
+                <p>@Html.DisplayFor(modelItem => item.ClosingTime.TimeOfDay)</p>
+            </div>
+            <div class="col-sm-3">
+                <p>Food Availability</p>
+            </div>
+        </li>
+    }
+</ul>
+
+<p>
+    <div class"empty-space" style="margin-top:40px"></div>
+    
+        @Html.ActionLink("Donate Now", "Create", new { controller = "Store" }, new { @class="donate"})
+    
+    <div class"empty-space" style="margin-top:40px"></div>
+        
+</p>
+

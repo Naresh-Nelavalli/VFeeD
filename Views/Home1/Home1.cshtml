@@ -1,31 +1,93 @@
 ﻿<!DOCTYPE html>
 <head>
     <script src="~/Scripts/app/Home1-controller.js"></script>
-    <script src="~/Scripts/TypingText.js"></script>
+
 </head>
+
 <body style="background:url('../Images1/login.jpg') fixed;background-size:cover!important ">
+    @*<div class="loginhead" style="background:url('../Images1/home114.jpg');width:100%;height:370px;zoom:1;position:relative; margin:0;padding:0;border:0;"></div>*@
     <span class="typed"></span>
+    
+    <div class="empty-space" style="margin-top:100px"></div>
 
-    <div class"empty-space" style="margin-top:100px"></div>
-
-    <div style="background-color:rgba(0,0,0,0.70); color:white; width: 100%; padding:5px">
-        
-        <h1 id="example1" style="font-size:large"> Every 3.6 seconds a person dies of hunger and sadly <strong>75% </strong> of them are children. . .</h1>
-        <h1 id="example2" style="font-size:large"> An estimated <strong>25 – 40% </strong> of food grown, processed and transported in the US will never be consumed. . .</h1>
-
+    <div class="col-md-12">
+        <div id="myCarousel" class="carousel slide" data-interval="5000" data-ride="carousel" style="height: 300px;width:100%;background-color:rgba(0,0,0,0.7);box-sizing:border-box">
+            <!-- Carousel indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+                <li data-target="#myCarousel" data-slide-to="5"></li>
+            </ol>
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+                <div class="active item" style="margin-left: 15%; margin-right: 15%;color:#eee">
+                    <h1>Respect for Food !!</h1>
+                    <p style="font-size:20px">Respect for food is a respect for life for who we are and what we do !!</p>
+                    <br />
+                    <br />
+                    <p style="text-align: right"><a class="btn btn-primary" href="@Url.Action("Register", "Account")">Join the cause</a></p>
+                </div>
+                <div class="item" style="margin-left: 15%; margin-right: 15%;color:#eee">
+                    <h2>Love & Food !!</h2>
+                    <p style="font-size:20px">Love and Food are meant for sharing not for wasting !!</p>
+                    <br />
+                    <p style="text-align: right"><a class="btn btn-primary" href="@Url.Action("Register", "Account")">Join the cause</a></p>
+                </div>
+                <div class="item" style="margin-left: 15%; margin-right: 15%;color:#eee">
+                    <h2>Mother Teresa !!</h2>
+                    <p style="font-size:20px">If you can't feed a hundred people, then feed just one. !!</p>
+                    <br />
+                    <br />
+                    <p style="text-align: right"><a class="btn btn-primary" href="@Url.Action("Register", "Account")">Join the cause</a></p>
+                </div>
+                <div class="item" style="margin-left: 15%; margin-right: 15%;color:#eee">
+                    <h2>Not Enough Food ?</h2>
+                    <p style="font-size:20px">
+                        There is food for everyone on this planet, but not everyone eats !!
+                    </p>
+                    <br />
+                    <p style="text-align: right"><a class="btn btn-primary" href="@Url.Action("Register", "Account")">Join the cause</a></p>
+                </div>
+                <div class="item" style="margin-left: 15%; margin-right: 15%;color:#eee">
+                    <h2>Hunger Deaths !!</h2>
+                    <p style="font-size:20px">Hunger kills more people each year than AIDS, malaria and tuberculosis combined. !!</p>
+                    <br />
+                    <p style="text-align: right"><a class="btn btn-primary" href="@Url.Action("Register", "Account")">Join the cause </a></p>
+                </div>
+                <div class="item" style="margin-left: 15%; margin-right: 15%;color:#eee">
+                    <h2>Poor Children !!</h2>
+                    <p style="font-size:20px">Poor nutrition causes nearly half (45%) of deaths in children under five – 3.1 million children each year. !!</p>
+                    <br />
+                    <p style="text-align: right"><a class="btn btn-primary" href="@Url.Action("Register", "Account")">Join the cause </a></p>
+                </div>
+            </div>
+            <!-- Carousel nav -->
+            <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right "></span>
+            </a>
+        </div>
     </div>
-    <script type="text/javascript">
-        //Define first typing example:
-        new TypingText(document.getElementById("example1"), 100, function (i) { var ar = new Array("\\", "|", "/", "-"); return " " + ar[i.length % ar.length]; });
-
-        //Define second typing example (use "slashing" cursor at the end):
-        new TypingText(document.getElementById("example2"), 200, function(i){ var ar = new Array("\\", "|", "/", "-"); return " " + ar[i.length % ar.length]; });
-
-        //Type out examples:
-        TypingText.runAll();
-    </script>
 
     <div class"empty-space" style="margin-top:100px"></div>
+
+
+    <div class="sqs-block-content">
+        <h2 font-size:22px; text-transform uppercase; letter-spacing 2px; font-weight 400; font-style normal; align="center" class="sqs-block-center">Volunteers</h2>
+        <p style="font-size:20px;font-weight:400;font-family:'Adobe Heiti Std';font-style:normal;color:rgba(26,26,26,.7)">
+           <strong> " VFeed needs your help." &nbsp; Sometimes even though we feel for a cause and want to be a part of the solution, 
+            our day to day work holds us back. At the end of the day we convince ourselves saying ‘I would have done 
+            my bit if I had time’." With VFeed, Join the cause to donate excess food.</strong>
+        </p>
+        <div class"empty-space"="" style="margin-top:100px"></div>
+    </div>
+
+
 
 
     <div class="transp-box" style="background-color:rgba(0,0,0,.5);border-radius:10px;padding-bottom:10px">
@@ -33,7 +95,7 @@
             <div class="col-md-4 col-md-offset-4 col-sm-offset-5">
                 <button class="btn-join-now" style="background-color:lightyellow;border:0;display:inline-block;cursor:pointer;padding:15px 40px;text-decoration:none;border-radius:4px;font-size:14px;margin:15px;outline:0;color:#fff">
                     <div class="joinnow" style="text-align:center;margin-top:14px;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-style:normal;font-size:large;color:#fff">
-                        <span>@Html.ActionLink("Wanna join the cause", "Index", "Home", new { area = "" }, null)</span>
+                        <span>@Html.ActionLink("Wanna join the cause", "Register", "Account", new { area = "" }, null)</span>
                         @*<span style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-style:normal;font-size:large;color:#fff">Want to join the cause  ?</span>*@
                     </div>
                 </button>
@@ -54,7 +116,7 @@
     <div class"empty-space" style="margin-top:100px"></div>
     <div class="full-achiev" style="height:500px;position:relative;flex-wrap:wrap;display:flex;box-sizing:border-box;font-size:100%;vertical-align:baseline;-webkit-tap-highlight-color:transparent;text-align:center;background:rgba(255,255,255,0.6);color:#424242;line-height:1">
         <div class="achiev-ind" style="z-index:0;width:33.33%;height:50%;left:0px;top:0px;overflow:hidden;position:absolute;padding:20px;border-left:5px solid #eee;border-right:5px solid rgba(0,255,0,0.5);justify-content:center;-webkit-box-pack:center;-webkit-box-align:center;align-items:center;align-content:center;flex-wrap:wrap;display:flex;vertical-align:baseline;-webkit-tap-highlight-color:transparent;box-sizing:border-box;text-align:center;color:#424242">
-           <!-- <img src="~/Images1/cover2.jpg" height="50" style="max-width:100%;vertical-align:middle">-->
+            <!-- <img src="~/Images1/cover2.jpg" height="50" style="max-width:100%;vertical-align:middle">-->
             <button type="button" class="btn btn-warning">
                 <h1 class="glyphicon glyphicon-user"></h1>
             </button>
@@ -104,5 +166,4 @@
             <h4 class="h4" style="font-size:20px;text-align:center;color:rgb(66,66,66);margin-bottom:30px;width:100%;font-weight:300;line-height:1.25em;margin:15px 0;display:block;-webkit-margin-before:1.33em"> 93,699 Facebook Followers  </h4>
         </div>
     </div>
-
 </body>
