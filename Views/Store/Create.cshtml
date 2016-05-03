@@ -3,9 +3,9 @@
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-    
+  <body style="background:url('../Images1/login.jpg');background-size:cover!important ">
     <div class="form-horizontal">
-        <h4>Edible Store Details</h4>
+        <h3>Update Food Availability</h3>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -32,15 +32,14 @@
             </div>
         </div>
 
-        
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>
-}
+    </body>
+    }
 
-<div>
-    @Html.ActionLink("Home", "Home1")
-</div>
+

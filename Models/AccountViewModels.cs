@@ -89,7 +89,7 @@ namespace VFeeD.Models
         [Display(Name = "Zipcode")]
         public int Zipcode { get; set; }
 
-        [Display(Name = "Isdonor")]
+        [Display(Name = "Willing to donate")]
         public bool Isdonor { get; set; }
 
        

@@ -1,7 +1,7 @@
 ﻿@using VFeeD.Models
 
 @model LoginViewModel
-<h2>@ViewBag.Title.</h2>
+<h2>@ViewBag.Title</h2>
 <head>
     <script src="~/Scripts/TypingText.js"></script>
 </head>
@@ -20,10 +20,10 @@
 
         <script type="text/javascript">
             //Define first typing example:
-            new TypingText(document.getElementById("example1"), 70, function (i) { var ar = new Array("\\", "|", "/", "-"); return " " + ar[i.length % ar.length]; });
+            new TypingText(document.getElementById("example1"), 50, function (i) { var ar = new Array("\\", "|", "/", "-"); return " " + ar[i.length % ar.length]; });
 
             //Define second typing example (use "slashing" cursor at the end):
-            new TypingText(document.getElementById("example2"), 100, function (i) { var ar = new Array("\\", "|", "/", "-"); return " " + ar[i.length % ar.length]; });
+            new TypingText(document.getElementById("example2"), 80, function (i) { var ar = new Array("\\", "|", "/", "-"); return " " + ar[i.length % ar.length]; });
 
             //Type out examples:
             TypingText.runAll();
@@ -34,7 +34,9 @@
                     @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                     {
                         @Html.AntiForgeryToken()
-                        <h4 style="color:#eee;font-size:large;">Log in.</h4>
+                        <div class="col-md-offset-4">
+                        <h4 style="color:#eee;font-size:large;"> Log In</h4>
+                         </div>
                         <hr />
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
@@ -60,8 +62,8 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="col-md-offset-3 col-md-12">
-                                        <input type="submit" value="Log in" class="btn btn-success" />
+                                    <div class="col-md-offset-4 col-md-12">
+                                        <input type="submit" value="Login" class="btn btn-success" />
                                     </div>
                                 </div>
                                 <div class="col-md-offset-1">
@@ -88,27 +90,31 @@
                     <h3 class="panel-title">Our Mission</h3>
                 </div>
                 <div class="panel-body">
-                    Provide food for everyone !.
+                    VFeed's objective is to reduce serious problem of food wastage and eradicate hunger deaths.
+
+                    <div class"empty-space" style="margin-top:20px"></div>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="panel panel-primary">
                 <div class="panel-heading" style="background-color:rgba(126,98,173,1)">
-                    <h3 class="panel-title">About us</h3>
+                    <h3 class="panel-title">About Us</h3>
                 </div>
                 <div class="panel-body">
-                    Students at Villanova !!.
+                    VFeed is a non-profit organization based in Philadelphia. The organization is focussed mainly on donating excess food from stores.
                 </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="panel panel-primary">
                 <div class="panel-heading" style="background-color:rgba(126,98,173,1)">
-                    <h3 class="panel-title">Purpose</h3>
+                    <h3 class="panel-title">Contact Us</h3>
                 </div>
                 <div class="panel-body">
-                    Eradicate hunger deaths!!.
+                    nnelaval@villanova.edu<br>
+                    hethapu@villanova.edu<br>
+                    spakanat@villanova.edu 
                 </div>
             </div>
         </div>

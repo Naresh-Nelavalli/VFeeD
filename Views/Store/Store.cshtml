@@ -29,34 +29,34 @@
     
     }
 </style>
+<body style="background:url('../Images1/login.jpg');background-size:cover!important ">
+    <ul class="storelist">
 
-<ul class="storelist">
+        @foreach (var item in Model)
+        {
+            <li class="row">
+                <div class="col-sm-1"><img src="~/Images1/cmgsoon.png" width="80px" /></div>
+                <div class="col-sm-4">
+                    <p>@Html.DisplayFor(modelItem => item.Name)</p>
+                    <p>@Html.DisplayFor(modelItem => item.Zipcode)</p>
+                </div>
+                <div class="col-sm-4">
+                    <p>Closing Time</p>
+                    <p>@Html.DisplayFor(modelItem => item.ClosingTime.TimeOfDay)</p>
+                </div>
+                <div class="col-sm-3">
+                    <p>Food Availability</p>
+                </div>
+            </li>
+        }
+    </ul>
 
-    @foreach (var item in Model)
-    {
-        <li class="row">
-            <div class="col-sm-1"><img src="~/Images1/cmgsoon.png" width="80px" /></div>
-            <div class="col-sm-4">
-                <p>@Html.DisplayFor(modelItem => item.Name)</p>
-                <p>@Html.DisplayFor(modelItem => item.Zipcode)</p>
-            </div>
-            <div class="col-sm-4">
-                <p>Closing Time</p>
-                <p>@Html.DisplayFor(modelItem => item.ClosingTime.TimeOfDay)</p>
-            </div>
-            <div class="col-sm-3">
-                <p>Food Availability</p>
-            </div>
-        </li>
-    }
-</ul>
+    <p>
+        <div class"empty-space" style="margin-top:40px"></div>
 
-<p>
-    <div class"empty-space" style="margin-top:40px"></div>
-    
-        @Html.ActionLink("Donate Now", "Create", new { controller = "Store" }, new { @class="donate"})
-    
-    <div class"empty-space" style="margin-top:40px"></div>
-        
-</p>
+        @Html.ActionLink("Donate Now", "Create", new { controller = "Store" }, new { @class = "donate" })
 
+        <div class"empty-space" style="margin-top:40px"></div>
+
+    </p>
+    </body>
